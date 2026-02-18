@@ -193,7 +193,6 @@ ETA/
 |------|-------------|
 | `README.md` | This file |
 | `LICENSE` | MIT License |
-| `prompt.md` | Educational curriculum outline |
 | `DiscreteFourierTransform.ipynb` | QFT implementation |
 | `QuantumPhaseEstimation.ipynb` | QPE implementation |
 | `GroversAlgorithm.ipynb` | Grover's search implementation |
