@@ -185,27 +185,6 @@ The notebooks are designed to run in:
 pip install qiskit qiskit-aer numpy matplotlib
 ```
 
-## Project Structure
-
-```
-ETA/
-| File | Description |
-|------|-------------|
-| `README.md` | This file |
-| `LICENSE` | MIT License |
-| `DiscreteFourierTransform.ipynb` | QFT implementation |
-| `QuantumPhaseEstimation.ipynb` | QPE implementation |
-| `GroversAlgorithm.ipynb` | Grover's search implementation |
-| `CHSHCircuit.ipynb` | Bell's theorem implementation |
-| `BornRule.ipynb` | Born Rule implementation |
-| `Hamiltonian_Simulation.ipynb` | Schrödinger equation simulation |
-| `VariationalQuantumEigensolver.ipynb` | VQE implementation |
-| `HHLAlgorithm.ipynb` | Linear systems solver |
-| `DeutschJozsa.ipynb` | Function classification |
-| `QuantumTeleportation.ipynb` | State transfer protocol |
-| `BB84KeyDistribution.ipynb` | Secure key generation |
-```
-
 ## Learning Path
 
 For beginners, we recommend studying the notebooks in this order:
