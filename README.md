@@ -15,7 +15,9 @@ This project is designed for:
 
 ## Notebooks
 
-### 1. Discrete Fourier Transform ([`DiscreteFourierTransform.ipynb`](DiscreteFourierTransform.ipynb))
+### Core Algorithms
+
+#### 1. Discrete Fourier Transform ([`DiscreteFourierTransform.ipynb`](DiscreteFourierTransform.ipynb))
 
 **Equation:** $X_k = \frac{1}{\sqrt{N}} \sum_{n=0}^{N-1} x_n e^{2\pi i \frac{nk}{N}}$
 
@@ -25,16 +27,11 @@ This project is designed for:
 - Quantum Fourier Transform (QFT)
 - Classical FFT vs Quantum QFT complexity comparison
 - Hadamard and Controlled-Phase gates
-- Round-trip unit testing (QFT → Inverse QFT)
-
-**Key Concepts:**
-- $O(\log^2 N)$ quantum complexity vs $O(N \log N)$ classical
-- Basis transformation: Computational → Fourier
-- Binary fraction phase encoding
+- Round-trip unit testing (QFT $\to$ Inverse QFT)
 
 ---
 
-### 2. Quantum Phase Estimation ([`QuantumPhaseEstimation.ipynb`](QuantumPhaseEstimation.ipynb))
+#### 2. Quantum Phase Estimation ([`QuantumPhaseEstimation.ipynb`](QuantumPhaseEstimation.ipynb))
 
 **Equation:** $U|\psi\rangle = e^{i\theta} |\psi\rangle$
 
@@ -46,14 +43,9 @@ This project is designed for:
 - Inverse QFT for phase readout
 - Applications: Shor's Algorithm, Quantum Chemistry
 
-**Key Concepts:**
-- Counting qubits for precision
-- Phase kickback mechanism
-- Binary phase encoding
-
 ---
 
-### 3. Grover's Algorithm ([`GroversAlgorithm.ipynb`](GroversAlgorithm.ipynb))
+#### 3. Grover's Algorithm ([`GroversAlgorithm.ipynb`](GroversAlgorithm.ipynb))
 
 **Equation:** Find $x$ such that $f(x) = 1$
 
@@ -65,14 +57,9 @@ This project is designed for:
 - Diffusion operator (inverts about average)
 - Amplitude amplification
 
-**Key Concepts:**
-- $O(\sqrt{N})$ quantum speedup
-- Oracle-Diffuser pattern
-- Optimal number of iterations
-
 ---
 
-### 4. CHSH Circuit - Bell's Theorem ([`CHSHCircuit.ipynb`](CHSHCircuit.ipynb))
+#### 4. CHSH Circuit - Bell's Theorem ([`CHSHCircuit.ipynb`](CHSHCircuit.ipynb))
 
 **Equation:** $S = E(a,b) - E(a,b') + E(a',b) + E(a',b') \leq 2$
 
@@ -84,14 +71,9 @@ This project is designed for:
 - Measurement in different bases
 - Violation of classical bounds ($2\sqrt{2} \approx 2.82$)
 
-**Key Concepts:**
-- Local hidden variables vs quantum mechanics
-- Entanglement verification
-- Correlation measurements
-
 ---
 
-### 5. Born Rule ([`BornRule.ipynb`](BornRule.ipynb))
+#### 5. Born Rule ([`BornRule.ipynb`](BornRule.ipynb))
 
 **Equation:** $P(\psi_1 \to \psi_2) = |\langle\psi_1|\psi_2\rangle|^2$
 
@@ -103,14 +85,9 @@ This project is designed for:
 - Fidelity measurement between quantum states
 - Alternative: Swap Test for state overlap
 
-**Key Concepts:**
-- State preparation circuits ($U_1$, $U_2$)
-- Inverse operations ($U^\dagger$)
-- Measurement in computational basis
-
 ---
 
-### 6. Hamiltonian Simulation ([`Hamiltonian_Simulation.ipynb`](Hamiltonian_Simulation.ipynb))
+#### 6. Hamiltonian Simulation ([`Hamiltonian_Simulation.ipynb`](Hamiltonian_Simulation.ipynb))
 
 **Equation:** $|\psi(t)\rangle = e^{-i\hat{H}t} |\psi(0)\rangle$
 
@@ -122,10 +99,79 @@ This project is designed for:
 - Ising Hamiltonian ($H = Z_0 Z_1 + X_0 + X_1$)
 - Time evolution operators
 
-**Key Concepts:**
-- Breaking continuous time into discrete steps
-- Gate decomposition: $e^{-iXt}$ → `Rx`, $e^{-iZZt}$ → `CX-RZ-CX`
-- The "Killer App" for quantum computers (chemistry, materials science)
+---
+
+### Advanced Algorithms
+
+#### 7. Variational Quantum Eigensolver ([`VariationalQuantumEigensolver.ipynb`](VariationalQuantumEigensolver.ipynb))
+
+**Equation:** $E(\psi) = \langle\psi|H|\psi\rangle \geq E_0$
+
+**Python Analogy:** `find_ground_state()` - Find the minimum energy configuration using hybrid quantum-classical optimization.
+
+**Topics Covered:**
+- Rayleigh-Ritz variational principle
+- Parameterized quantum circuits (ansatz)
+- Hybrid quantum-classical optimization
+- Applications: Quantum chemistry, drug discovery
+
+---
+
+#### 8. HHL Algorithm ([`HHLAlgorithm.ipynb`](HHLAlgorithm.ipynb))
+
+**Equation:** $A|x\rangle = |b\rangle$
+
+**Python Analogy:** `solve_linear_system()` - Solve linear equations exponentially faster for sparse matrices.
+
+**Topics Covered:**
+- Linear system solving
+- Quantum phase estimation for eigenvalue decomposition
+- Controlled rotation for eigenvalue inversion
+- Applications: Machine learning, differential equations
+
+---
+
+#### 9. Deutsch-Jozsa Algorithm ([`DeutschJozsa.ipynb`](DeutschJozsa.ipynb))
+
+**Equation:** $f: \{0,1\}^n \to \{0,1\}$ (constant or balanced?)
+
+**Python Analogy:** `classify_function()` - Determine if function is constant or balanced in 1 query vs $2^{n-1}+1$ classically.
+
+**Topics Covered:**
+- First quantum advantage demonstration
+- Phase kickback mechanism
+- Quantum interference
+- Foundation for more complex algorithms
+
+---
+
+#### 10. Quantum Teleportation ([`QuantumTeleportation.ipynb`](QuantumTeleportation.ipynb))
+
+**Equation:** $|\psi\rangle_{Alice} \to |\psi\rangle_{Bob}$
+
+**Python Analogy:** `transfer_state()` - Transfer quantum state using entanglement and classical communication.
+
+**Topics Covered:**
+- Bell state preparation
+- Bell measurement
+- Classical control operations
+- No-cloning theorem implications
+
+---
+
+#### 11. BB84 Key Distribution ([`BB84KeyDistribution.ipynb`](BB84KeyDistribution.ipynb))
+
+**Equation:** $K_{shared} = K_{Alice} \cap K_{Bob}$
+
+**Python Analogy:** `generate_secure_key()` - Create provably secure shared secret key.
+
+**Topics Covered:**
+- Quantum key distribution protocol
+- Eavesdropper detection via error rate
+- Basis reconciliation
+- Unconditional security from physics
+
+---
 
 ## Requirements
 
@@ -143,27 +189,39 @@ pip install qiskit qiskit-aer numpy matplotlib
 
 ```
 ETA/
-├── README.md                      # This file
-├── LICENSE                        # MIT License
-├── prompt.md                      # Educational curriculum outline
-├── DiscreteFourierTransform.ipynb # QFT implementation
-├── QuantumPhaseEstimation.ipynb   # QPE implementation
-├── GroversAlgorithm.ipynb         # Grover's search implementation
-├── CHSHCircuit.ipynb              # Bell's theorem implementation
-├── BornRule.ipynb                 # Born Rule implementation
-└── Hamiltonian_Simulation.ipynb   # Schrödinger equation simulation
+| File | Description |
+|------|-------------|
+| `README.md` | This file |
+| `LICENSE` | MIT License |
+| `prompt.md` | Educational curriculum outline |
+| `DiscreteFourierTransform.ipynb` | QFT implementation |
+| `QuantumPhaseEstimation.ipynb` | QPE implementation |
+| `GroversAlgorithm.ipynb` | Grover's search implementation |
+| `CHSHCircuit.ipynb` | Bell's theorem implementation |
+| `BornRule.ipynb` | Born Rule implementation |
+| `Hamiltonian_Simulation.ipynb` | Schrödinger equation simulation |
+| `VariationalQuantumEigensolver.ipynb` | VQE implementation |
+| `HHLAlgorithm.ipynb` | Linear systems solver |
+| `DeutschJozsa.ipynb` | Function classification |
+| `QuantumTeleportation.ipynb` | State transfer protocol |
+| `BB84KeyDistribution.ipynb` | Secure key generation |
 ```
 
 ## Learning Path
 
 For beginners, we recommend studying the notebooks in this order:
 
-1. **Discrete Fourier Transform** - Essential subroutine for many quantum algorithms
-2. **Quantum Phase Estimation** - Builds on QFT, used in Shor's algorithm
-3. **Grover's Algorithm** - Fundamental search algorithm with quadratic speedup
-4. **CHSH Circuit** - Demonstrates quantum advantage and entanglement
-5. **Born Rule** - Fundamental measurement probability in quantum mechanics
-6. **Hamiltonian Simulation** - Advanced topic with practical applications
+1. **Deutsch-Jozsa** - Simplest demonstration of quantum advantage
+2. **Discrete Fourier Transform** - Essential subroutine for many algorithms
+3. **Quantum Phase Estimation** - Builds on QFT, used in Shor's algorithm
+4. **Grover's Algorithm** - Fundamental search algorithm
+5. **CHSH Circuit** - Demonstrates quantum advantage and entanglement
+6. **Born Rule** - Fundamental measurement probability
+7. **Quantum Teleportation** - Quantum communication protocol
+8. **BB84 Key Distribution** - Quantum cryptography
+9. **Hamiltonian Simulation** - Advanced topic with practical applications
+10. **Variational Quantum Eigensolver** - Near-term quantum computing
+11. **HHL Algorithm** - Advanced linear algebra
 
 ## Complexity Comparison
 
@@ -174,6 +232,24 @@ For beginners, we recommend studying the notebooks in this order:
 | Search (SAT) | $O(N)$ | $O(\sqrt{N})$ |
 | Born Rule (Fidelity) | $O(2^n)$ | $O(n)$ |
 | Hamiltonian Simulation | Exponential | Polynomial |
+| Linear Systems (HHL) | $O(N)$ | $O(\log N)$ |
+| Deutsch-Jozsa | $O(2^{n-1})$ | $O(1)$ |
+
+## Python Developer Mapping
+
+| Equation | Python Analogy | Notebook |
+|----------|---------------|----------|
+| Fourier Transform | `change_basis()` | [`DiscreteFourierTransform.ipynb`](DiscreteFourierTransform.ipynb) |
+| Eigenvalue Problem | `find_phase()` | [`QuantumPhaseEstimation.ipynb`](QuantumPhaseEstimation.ipynb) |
+| Search/SAT | `boost_probability()` | [`GroversAlgorithm.ipynb`](GroversAlgorithm.ipynb) |
+| Bell's Theorem | `test_reality()` | [`CHSHCircuit.ipynb`](CHSHCircuit.ipynb) |
+| Born Rule | `assert_similarity()` | [`BornRule.ipynb`](BornRule.ipynb) |
+| Schrödinger Eq | `TimeEvolution()` | [`Hamiltonian_Simulation.ipynb`](Hamiltonian_Simulation.ipynb) |
+| Variational Principle | `find_ground_state()` | [`VariationalQuantumEigensolver.ipynb`](VariationalQuantumEigensolver.ipynb) |
+| Linear Systems | `solve_linear_system()` | [`HHLAlgorithm.ipynb`](HHLAlgorithm.ipynb) |
+| Function Classification | `classify_function()` | [`DeutschJozsa.ipynb`](DeutschJozsa.ipynb) |
+| State Transfer | `transfer_state()` | [`QuantumTeleportation.ipynb`](QuantumTeleportation.ipynb) |
+| Key Exchange | `generate_secure_key()` | [`BB84KeyDistribution.ipynb`](BB84KeyDistribution.ipynb) |
 
 ## Key Features
 
